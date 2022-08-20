@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from './components/Layout.jsx'
+import { Routes, Route } from 'react-router-dom'
+
+import { Main } from './pages/Main'
+import { Posts } from './pages/Posts'
+import { Post } from './pages/Post'
+import { AddPost } from './pages/AddPost'
+import { Register } from './pages/Register'
+import { Login } from './pages/Login'
+import { EditPost } from './pages/EditPost'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="posts" element={<Posts />} />
+        <Route path=":id" element={<Post />} />
+        <Route path=":id/edit" element={<EditPost />} />
+        <Route path="new" element={<AddPost />} />
+        <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />} />
+      </Routes>
+    </Layout>
+  )
 }
 
-export default App;
+export default App
