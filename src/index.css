@@ -4,6 +4,11 @@
 
 @layer base {
   body {
-    font-family: 'Amiri', serif;
+    background-color: #fff6d6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23D7F3EF' stroke-width='3.7' stroke-opacity='0' %3E%3Ccircle fill='%23FFF6D6' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fdf6d8' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23fbf6da' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23f9f5dc' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23f7f5de' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23f5f5e0' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23f3f5e2' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23f1f5e4' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23eff5e7' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23edf4e9' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23ebf4eb' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23e9f4ed' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23e7f4ef' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23e4f4f1' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23e2f4f3' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23e0f3f5' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23ddf3f7' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23DBF3F9' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+
+    font-family: 'Poppins', sans-serif;
   }
 }
