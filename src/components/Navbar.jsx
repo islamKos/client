@@ -1,36 +1,40 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import { checkIsAuth, logout } from '../redux/features/auth/authSlice'
 import { toast } from 'react-toastify'
 
 export const Navbar = () => {
-  const activeStyle = {
-    color: '#62B1D0',
-  }
-
   const isAuth = useSelector(checkIsAuth)
   const dispatch = useDispatch()
+
+  const activeStyles = {
+    color: 'white',
+  }
 
   const logoutHandler = () => {
     dispatch(logout())
     window.localStorage.removeItem('token')
-    toast('Вы вышли из аккаунта')
+    toast('Вы вышли из системы')
   }
 
   return (
     <div className="flex py-4 justify-between items-center">
-      <span className="flex justify-center items-center w-8 h-6 bg-gray-600 text-white rounded-sm ">
+      <NavLink
+        to={'/'}
+        className="flex mx-4 px-2 w-auto justify-center items-center h-6 bg-gray-500 text-white rounded-sm"
+      >
         KIA
-      </span>
+      </NavLink>
+
       {isAuth && (
         <ul className="flex gap-8">
           <li>
             <NavLink
               to={'/'}
               href="/"
-              className=" text-gray-500 hover:text-black"
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              className=" text-gray-400 hover:text-white"
+              style={({ isActive }) => (isActive ? activeStyles : undefined)}
             >
               Главная
             </NavLink>
@@ -39,8 +43,8 @@ export const Navbar = () => {
             <NavLink
               to={'/posts'}
               href="/"
-              className=" text-gray-500 hover:text-black"
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              className=" text-gray-400 hover:text-white"
+              style={({ isActive }) => (isActive ? activeStyles : undefined)}
             >
               Мои посты
             </NavLink>
@@ -49,8 +53,8 @@ export const Navbar = () => {
             <NavLink
               to={'/new'}
               href="/"
-              className=" text-gray-500 hover:text-black"
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              className=" text-gray-400 hover:text-white"
+              style={({ isActive }) => (isActive ? activeStyles : undefined)}
             >
               Добавить пост
             </NavLink>
@@ -58,11 +62,13 @@ export const Navbar = () => {
         </ul>
       )}
 
-      <div className="flex justify-center items-center bg-gray-600 text-white rounded-sm px-3 py-1">
+      <div className="flex mx-4 justify-center items-center bg-gray-500 text-white rounded-sm px-4">
         {isAuth ? (
-          <button onClick={logoutHandler}>Выйти</button>
+          <Link to={'/register'} onClick={logoutHandler}>
+            Выйти
+          </Link>
         ) : (
-          <Link to={'/login'}>Войти</Link>
+          <Link to={'/login'}> Войти </Link>
         )}
       </div>
     </div>
