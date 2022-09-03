@@ -61,7 +61,7 @@ export const EditPost = () => {
       </label>
       <div className="flex object-cover py-2">
         {oldImage && (
-          <img src={`http://localhost:3003/${oldImage}`} alt={oldImage.name} />
+          <img src={`${process.env.REACT_APP_API_URL}${oldImage}`} alt={oldImage.name} />
         )}
         {newImage && (
           <img src={URL.createObjectURL(newImage)} alt={newImage.name} />

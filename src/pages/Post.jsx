@@ -95,7 +95,7 @@ export const Post = () => {
             >
               {post?.imgUrl && (
                 <img
-                  src={`http://localhost:3003/${post.imgUrl}`}
+                  src={`${process.env.REACT_APP_API_URL}${post.imgUrl}`}
                   alt="img"
                   className="object-cover w-full"
                 />
